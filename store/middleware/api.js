@@ -9,7 +9,7 @@ import md5 from 'md5'
 import 'isomorphic-unfetch'
 
 // 生成签名
-const KEY = 'ojdqfi5xqetvj6rk' //后台约定的key
+const KEY = 'faffa2fa' //后台约定的key
 const nonce_str = randomWord(false,32)
 const timestamp = Date.now()
 const stringA = `nonce_str=${nonce_str}&timestamp=${timestamp}`
