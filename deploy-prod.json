@@ -1,0 +1,30 @@
+{
+    "apps": [
+        {
+          "name": "goodsapp-prod",
+          "script": "server.js",
+          "env":{
+              "COMON_VARIABLE": "true"
+          },
+          "env_production": {
+              "NODE_ENV": "production"
+          }
+        }
+    ],
+    "deploy": {
+        "production": {
+            "user": "root",
+            "host": ["39.108.74.36"],
+            "ref": "origin/master",
+            "repo": "https://gitee.com/Poetries1/goods-prev.yesdat.com.git",
+            "path": "/home/production",
+            "ssh_options": ["StrictHostKeyChecking=no", "PasswordAuthentication=no"],
+            "post-deploy": "npm install && pm2 startOrRestart deploy-app.json --env production",
+            "pre-deploy-local": "echo 'Deploy Done!'",
+            "env": {
+                "NODE_ENV": "production"
+            }
+        }
+    }
+  }
+  

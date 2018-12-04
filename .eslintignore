@@ -1,0 +1,7 @@
+build
+goodsBuild
+dist
+node_modules
+!.eslintrc.js
+static
+outCDN
